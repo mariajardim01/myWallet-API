@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import status from "http-status";
 
 export async function authValidation(req, res, next) {
-    const authHeader = req.headers.token;
+    const authHeader = req.headers.authentication;
 
     if (!authHeader) {
         return res.sendStatus(status.UNAUTHORIZED); 
