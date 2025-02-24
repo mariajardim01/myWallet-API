@@ -16,7 +16,7 @@ export async function signInUser(req,res) {
         if (!bcrypt.compareSync(req.body.password, user.password)){
             return res.sendStatus(status.NOT_FOUND)
         }
-        const token = jwt.sign({userId: user._id, expiresIn: 7200}, process.env.KEY )
+        const token = jwt.sign({userId: user._id}, process.env.KEY ,{ expiresIn: 7200 })
         return res.status(status.OK).send({user: user._id, token: token})
 
     }

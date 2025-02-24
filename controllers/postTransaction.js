@@ -10,13 +10,13 @@ export async function postTransaction(req, res) {
     const userId = res.locals.userId
     
     
-    const type = req.query.type
+    const type = req.body.type
     if (type != "deposit" && type != "withdraw" ){
         return res.sendStatus(status.UNPROCESSABLE_ENTITY)
     }
     
     try{
-    await db.collection('transactions').insertOne({...req.body, type: type, userId:new ObjectId( userId), date: dayjs().format('DD-MM-YYYY') })
+    await db.collection('transactions').insertOne({...req.body, userId:new ObjectId( userId), date: dayjs().format('DD-MM-YYYY') })
     return res.sendStatus(status.CREATED)
     }
     catch{
