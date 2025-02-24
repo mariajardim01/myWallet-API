@@ -141,7 +141,7 @@ Authorization: Bearer <token>
 
 ## Deployment
 The API is deployed on Render:
-[MyWallet API Deployment](https://dashboard.render.com/web/srv-cuttp5ogph6c73b6d8s0/logs)
+[MyWallet API Deployment](https://mywallet-api-6p26.onrender.com)
 
 
 
